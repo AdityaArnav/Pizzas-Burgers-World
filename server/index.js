@@ -4,6 +4,7 @@ import cors from 'cors';
 import morgan from 'morgan';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
+import productRouter from './routes/productsRoutes.js';
 
 
 dotenv.config();
@@ -19,11 +20,10 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(morgan('dev'));
 
 // Routes
-app.get('/',(req,res)=>{
-    (res.send('Pizzas&Burgers World'))
-});
+app.use('/api/products/', productRouter)
 
 // connecting with MongoDB
+
 // const connection = async (req,res)=>{
 //     try{
 //         await mongoose.connect(process.env.MONGODB_URL)
@@ -42,6 +42,8 @@ app.get('/',(req,res)=>{
     .catch((err)=>{
         console.log(err.message)
     })
+
+
 // Creating Port
 const PORT = process.env.PORT || 8000;
 

@@ -27,5 +27,5 @@ const productSchema = mongoose.Schema({
     timestap: true
 });
 
-const product = mongoose.model('product', productSchema);
-module.exports = product;
+const Product = mongoose.model('Product', productSchema);
+export default Product;
