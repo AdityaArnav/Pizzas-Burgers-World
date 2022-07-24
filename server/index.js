@@ -24,24 +24,30 @@ app.get('/',(req,res)=>{
 });
 
 // connecting with MongoDB
-const connection = async (req,res)=>{
-    try{
-        await mongoose.connect(process.env.MONGODB_URL)
-        console.log('Database Connected');
+// const connection = async (req,res)=>{
+//     try{
+//         await mongoose.connect(process.env.MONGODB_URL)
+//         console.log('Database Connected');
 
-    }
-    catch(err){
-        console.log('error occured',err)
+//     }
+//     catch(err){
+//         console.log('error occured',err)
 
-    }
-}
+//     }
+// }
 
+    mongoose.connect(process.env.MONGODB_URL).then(()=>{
+        console.log('database connected to mongodb')
+    })
+    .catch((err)=>{
+        console.log(err.message)
+    })
 // Creating Port
 const PORT = process.env.PORT || 8000;
 
 // listening to PORT
 app.listen(PORT,(req,res)=>{
-    connection()
+    // connection()
     console.log(`server is listening to the port http://localhost:${PORT}`)
 })
 
