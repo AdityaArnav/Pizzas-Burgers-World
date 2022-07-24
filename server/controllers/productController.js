@@ -7,6 +7,17 @@ export const getProductController = async (req,res)=>{
 
         }
         catch(error){
-            console.log(error)
+            console.log(error);
         }
+}
+
+export const addProductController = async (req,res)=>{
+    try{
+        const newProducts = new Product(req.body);
+        await newProducts.save();
+        res.status(200).send('product added');
+    }
+    catch(error){
+        console.log(error);
+    }
 }
