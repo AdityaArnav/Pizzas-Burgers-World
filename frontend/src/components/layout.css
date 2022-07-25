@@ -19,3 +19,31 @@
   .site-layout .site-layout-background {
     background: #fff;
   }
+  .ant-layout-sider-children{
+    background-color:  rgb(86, 66, 22);;
+    height:100vh;
+  }
+  .anticon svg{
+    font-size: 25px;
+    margin-left: 10px;
+  }
+  /* .ant-layout-header .anticon svg{
+    margin-left: 10px;
+  } */
+
+  .ant-menu-title-content{
+    font-size:18px;
+  }
+
+.ant-menu-dark.ant-menu-inline, .ant-menu-dark.ant-menu-vertical, .ant-menu-dark.ant-menu-vertical-left, .ant-menu-dark.ant-menu-vertical-right {
+  border-right: 0;
+}
+
+.ant-menu.ant-menu-dark, .ant-menu-dark .ant-menu-sub, .ant-menu.ant-menu-dark .ant-menu-sub {
+  background-color: rgb(86, 66, 22);
+}
+
+.ant-menu-dark.ant-menu-dark:not(.ant-menu-horizontal) .ant-menu-item-selected {
+  background-color: palevioletred;
+  /* color:black */
+}
